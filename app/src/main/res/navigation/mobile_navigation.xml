@@ -9,17 +9,68 @@
         android:id="@+id/nav_home"
         android:name="com.example.enablersofsymbiosisprototype.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_my_farm"
+            app:destination="@id/nav_my_farm"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_deals"
+            app:destination="@id/nav_deals"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_farm_map"
+            app:destination="@id/nav_farm_map"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_marketplace"
+            app:destination="@id/nav_marketplace"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.enablersofsymbiosisprototype.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_marketplace"
+        android:name="com.example.enablersofsymbiosisprototype.ui.marketplace.MarketplaceFragment"
+        android:label="@string/menu_marketplace"
+        tools:layout="@layout/fragment_marketplace" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.enablersofsymbiosisprototype.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_farm_map"
+        android:name="com.example.enablersofsymbiosisprototype.ui.farmMap.FarmMapFragment"
+        android:label="@string/menu_farm_map"
+        tools:layout="@layout/fragment_farm_map" />
+
+    <fragment
+        android:id="@+id/nav_deals"
+        android:name="com.example.enablersofsymbiosisprototype.ui.deals.DealsFragment"
+        android:label="@string/menu_deals"
+        tools:layout="@layout/fragment_deals" />
+
+    <fragment
+        android:id="@+id/nav_my_farm"
+        android:name="com.example.enablersofsymbiosisprototype.ui.myFarm.MyFarmFragment"
+        android:label="@string/menu_my_farm"
+        tools:layout="@layout/fragment_my_farm" />
+
+    <fragment
+        android:id="@+id/nav_user_menu"
+        android:name="com.example.enablersofsymbiosisprototype.ui.userMenu.UserMenuFragment"
+        android:label="@string/menu_user_menu"
+        tools:layout="@layout/fragment_user_menu" />
+    <action
+        android:id="@+id/action_global_nav_user_menu"
+        app:destination="@id/nav_user_menu"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+    <action
+        android:id="@+id/action_global_nav_home"
+        app:destination="@id/nav_home"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@+id/mobile_navigation"
+        app:popUpToInclusive="true" />
 </navigation>

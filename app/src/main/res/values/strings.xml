@@ -2,13 +2,30 @@
     <string name="app_name">Enablers of symbiosis prototype</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Enablers of symbiosis</string>
+    <string name="nav_header_subtitle">Menu</string>
+    <string name="nav_header_picture">Green field</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_user_menu">User menu</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_marketplace">Marketplace</string>
+    <string name="menu_farm_map">Farm map</string>
+    <string name="menu_deals">Deals</string>
+    <string name="menu_my_farm">My farm</string>
+    <string name="menu_user_menu">User Menu</string>
+
     <string name="floatingbutton">floatingButton</string>
+    <string name="marketplaceButton">Tractor</string>
+    <string name="marketplaceButtonTitle"><![CDATA[Marketplace >]]></string>
+    <string name="farmMapButton">Field</string>
+    <string name="farmMapButtonTitle"><![CDATA[Farm map >]]></string>
+    <string name="dealsButton">Deals</string>
+    <string name="dealsButtonTitle"><![CDATA[Deals >]]></string>
+    <string name="myFarmButton">Farm</string>
+    <string name="myFarmButtonTitle"><![CDATA[My farm >]]></string>
+
+    <string name="listImageDescription">Image of the list item</string>
+
+    <string name="exampleText">This is example text that will be replaced in runtime</string>
 </resources>

@@ -7,8 +7,9 @@ public class User {
     public String lastName;
     public String email;
     public long phoneNumber;
-    public String pictureReference;
+    public int profilePictureReference;
 
+    public Notifications notifications;
     public Farm farm;
     public Company company;
 
