@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/orderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:paddingTop="10dp"
+            android:text="@string/filterListingTypesTitle"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxRentalListings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="7dp"
+                    android:checked="true"
+                    android:gravity="center_horizontal"
+                    android:minHeight="32dp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/radioOrderNewestTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/filterTypeRentalListings"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxSellListings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="7dp"
+                    android:checked="true"
+                    android:gravity="center_horizontal"
+                    android:minHeight="32dp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/radioOrderOldestTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/filterTypeSellListings"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxPurchaseListings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="7dp"
+                    android:checked="true"
+                    android:gravity="center_horizontal"
+                    android:minHeight="32dp" />
+
+                <TextView
+                    android:id="@+id/radioOrderPriceHighestTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/filterTypePurchaseListings"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

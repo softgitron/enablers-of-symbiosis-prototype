@@ -9,6 +9,7 @@ public class User {
     public long phoneNumber;
     public int profilePictureReference;
 
+    public ArrayList<Listing> listings = new ArrayList<>();
     public Notifications notifications;
     public Farm farm;
     public Company company;

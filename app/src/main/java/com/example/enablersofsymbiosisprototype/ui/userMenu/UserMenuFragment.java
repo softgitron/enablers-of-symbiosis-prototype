@@ -81,7 +81,7 @@ public class UserMenuFragment extends Fragment {
 
             adaptedUserList[index].thumbnailReference = user.profilePictureReference;
 
-            adaptedUserList[index].extra = user;
+            adaptedUserList[index].extras.put("user", user);
 
             index++;
         }
@@ -93,7 +93,7 @@ public class UserMenuFragment extends Fragment {
         @Override
         public void onClick(View clickedView) {
             int itemPosition = binding.userList.getChildLayoutPosition(clickedView);
-            Users.getInstance().currentUser = (User)userListItems[itemPosition].extra;
+            Users.getInstance().currentUser = (User)userListItems[itemPosition].extras.get("user");
 
             NavController navController = NavHostFragment.findNavController(UserMenuFragment.this);
             navController.navigate(R.id.action_global_nav_home);

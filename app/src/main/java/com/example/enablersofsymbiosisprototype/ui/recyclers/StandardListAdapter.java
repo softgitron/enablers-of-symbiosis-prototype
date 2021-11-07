@@ -7,9 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.enablersofsymbiosisprototype.R;
+
+import java.util.ArrayList;
 
 public class StandardListAdapter extends RecyclerView.Adapter<StandardListAdapter.ViewHolder> {
     private StandardListModel[] localDataSet;
@@ -75,4 +78,8 @@ public class StandardListAdapter extends RecyclerView.Adapter<StandardListAdapte
         return localDataSet.length;
     }
 
+    public void updateAdapterList(StandardListModel[] dataSet) {
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new StandardDiffCallback(dataSet, localDataSet));
+        diffResult.dispatchUpdatesTo(this);
+    }
 }

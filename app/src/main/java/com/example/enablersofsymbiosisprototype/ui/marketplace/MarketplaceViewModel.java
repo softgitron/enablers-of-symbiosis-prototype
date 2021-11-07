@@ -4,16 +4,16 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.List;
+
 public class MarketplaceViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    public MutableLiveData<Boolean> radioOrderNewest = new MutableLiveData<>();
+    public MutableLiveData<Boolean> radioOrderOldest = new MutableLiveData<>();
+    public MutableLiveData<Boolean> radioOrderPriceHighest = new MutableLiveData<>();
+    public MutableLiveData<Boolean> radioOrderPriceLowest = new MutableLiveData<>();
 
     public MarketplaceViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
+        radioOrderNewest.setValue(true);
     }
 }

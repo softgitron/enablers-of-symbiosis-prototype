@@ -7,13 +7,15 @@
     <string name="nav_header_picture">Green field</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_user_menu">User menu</string>
+    <string name="action_help">Help</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_marketplace">Marketplace</string>
     <string name="menu_farm_map">Farm map</string>
     <string name="menu_deals">Deals</string>
     <string name="menu_my_farm">My farm</string>
-    <string name="menu_user_menu">User Menu</string>
+    <string name="menu_user_menu">User menu</string>
+    <string name="menu_marketplace_additional_filters">Additional filters</string>
 
     <string name="floatingbutton">floatingButton</string>
     <string name="marketplaceButton">Tractor</string>
@@ -26,6 +28,39 @@
     <string name="myFarmButtonTitle"><![CDATA[My farm >]]></string>
 
     <string name="listImageDescription">Image of the list item</string>
+
+    <string name="filterSearchHint">Search phrase</string>
+    <string name="filterMinPriceHint">Min price</string>
+    <string name="filterMaxPriceHint">Max price</string>
+    <string name="filterMaxDistanceHint">Max distance</string>
+    <string name="filterMapContentDescription">Current location with a circle presenting max distance</string>
+    <string name="filterApplyFilters">Apply filters</string>
+    <string name="filterCategoriesTitle">Categories:</string>
+    <string name="filterOrderTitle">Order:</string>
+    <string name="filterCurrentFiltersTitle">Current filters:</string>
+    <string name="filterCurrentHitsTitle">Current hits:</string>
+    <string name="filterListingTypesTitle">Listing types:</string>
+
+    <string name="filterFarmByproducts">Farm byproducts</string>
+    <string name="filterFarmDisposables">Farm disposables</string>
+    <string name="filterFarmProducts">Farm products</string>
+    <string name="filterFertilizersAndChemicals">Fertilizers and chemicals</string>
+    <string name="filterFieldRental">Field Rental</string>
+    <string name="filterMachineRental">Machine rental</string>
+    <string name="filterSeeds">Seeds</string>
+    <string name="filterWorkforceRental">Workforce rental</string>
+
+    <string name="filterOrderNewest">Newest</string>
+    <string name="filterOrderOldest">Oldest</string>
+    <string name="filterOrderPriceHighest">Price highest</string>
+    <string name="filterOrderPriceLowest">Price lowest</string>
+
+    <string name="filterTypeRentalListings">Rental listings</string>
+    <string name="filterTypeSellListings">Sell listings</string>
+    <string name="filterTypePurchaseListings">Purchase listings</string>
+
+    <string name="filterButtonMoreSearchOptions">More search options</string>
+    <string name="filterButtonSearch">Search</string>
 
     <string name="exampleText">This is example text that will be replaced in runtime</string>
 </resources>

@@ -4,7 +4,7 @@ import static com.example.enablersofsymbiosisprototype.data.Utils.enumToStringLi
 
 import java.util.ArrayList;
 
-public class MachineRentalListing extends Listing {
+public class MachineRentalListing extends RentalListing {
     public enum Department {
         Tractor,
         Harvester,
@@ -15,8 +15,6 @@ public class MachineRentalListing extends Listing {
         Manual,
         Automatic
     }
-
-    public DateSpan availability;
 
     // Technical details
     public int operatingHours;

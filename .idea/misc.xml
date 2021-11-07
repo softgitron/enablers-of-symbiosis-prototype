@@ -5,8 +5,10 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.8630208333333333" />
         <entry key="app/src/main/res/drawable/home_round_corner.xml" value="0.8651041666666667" />
+        <entry key="app/src/main/res/drawable/ic_app_bar_help.xml" value="0.5302083333333333" />
         <entry key="app/src/main/res/drawable/ic_app_bar_user.xml" value="0.703125" />
         <entry key="app/src/main/res/drawable/ic_circle.xml" value="0.703125" />
+        <entry key="app/src/main/res/drawable/ic_circle_blue.xml" value="0.571875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.8630208333333333" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.8630208333333333" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.8630208333333333" />
@@ -18,8 +20,12 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.738677536231884" />
         <entry key="app/src/main/res/layout/fragment_deals.xml" value="0.7427536231884058" />
         <entry key="app/src/main/res/layout/fragment_farm_map.xml" value="0.7427536231884058" />
+        <entry key="app/src/main/res/layout/fragment_filter_categories.xml" value="0.6010416666666667" />
+        <entry key="app/src/main/res/layout/fragment_filter_listing_type.xml" value="0.6598958333333333" />
+        <entry key="app/src/main/res/layout/fragment_filter_order.xml" value="1.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.75" />
-        <entry key="app/src/main/res/layout/fragment_marketplace.xml" value="0.7427536231884058" />
+        <entry key="app/src/main/res/layout/fragment_marketplace.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/fragment_marketplace_additional_filters.xml" value="0.6598958333333333" />
         <entry key="app/src/main/res/layout/fragment_my_farm.xml" value="0.7427536231884058" />
         <entry key="app/src/main/res/layout/fragment_standard_list_item.xml" value="0.9" />
         <entry key="app/src/main/res/layout/fragment_user_menu.xml" value="0.7427536231884058" />

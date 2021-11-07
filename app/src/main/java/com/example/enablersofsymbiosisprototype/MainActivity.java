@@ -1,13 +1,17 @@
 package com.example.enablersofsymbiosisprototype;
 
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.internal.Asserts;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -18,6 +22,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.enablersofsymbiosisprototype.databinding.ActivityMainBinding;
 
+import org.osmdroid.config.Configuration;
+
+import java.util.Observable;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -25,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private NavController navController;
 
     private int destinationID;
+
+    public static MutableLiveData<Integer> latestGrantResults = new MutableLiveData<>();
+    public static Boolean ongoingPermissionRequest = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
+        // Prepare mapView
+        Configuration.getInstance().setOsmdroidBasePath(getCacheDir());
+        Configuration.getInstance().setUserAgentValue("enablersofsymbiosisprototype");
+        latestGrantResults.postValue(0);
     }
 
     @Override
@@ -87,5 +103,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 101) {// If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0 &&
+                    grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                Snackbar.make(findViewById(R.id.nav_host_fragment_content_main),
+                        "Location permission denied, location filtering will be unavailable", Snackbar.LENGTH_LONG).show();
+            }
+        }
+        ongoingPermissionRequest = false;
+        //noinspection ConstantConditions
+        int lastIndex = latestGrantResults.getValue();
+        latestGrantResults.postValue(lastIndex + 1);
     }
 }

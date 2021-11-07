@@ -13,20 +13,21 @@ public class Listing {
         Rent
     }
 
-    public static final ArrayList<String>  categories = new ArrayList<String>() {
+    public static final ArrayList<String> categories = new ArrayList<String>() {
         {
             add("Farm byproducts");
             add("Farm disposables");
             add("Farm products");
+            add("Fertilizers and chemicals");
             add("Field rental");
             add("Machine rental");
             add("Seeds");
-            add("Fertilizers and chemicals");
+            add("Workforce rental");
         }
     };
 
     public ListingType type;
-    public ArrayList<String> photoReferences = new ArrayList<>();
+    public ArrayList<Integer> photoReferences = new ArrayList<>();
     public String name;
     public String description;
     public long price;

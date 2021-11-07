@@ -1,8 +1,13 @@
 package com.example.enablersofsymbiosisprototype.data;
 
+import android.util.Pair;
+
 import com.example.enablersofsymbiosisprototype.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Users {
     private static Users instance = new Users();
@@ -18,6 +23,21 @@ public class Users {
         user1.profilePictureReference = R.drawable.lasse_jokinen;
         user1.email = "lasse.jokinen@example.com";
         user1.phoneNumber = 358552145864L;
+
+        DateSpan dateSpan1 = new DateSpan();
+        try {
+            dateSpan1.initDatesBetween(
+                    new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse("1.1.2022"),
+                    new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse("1.2.2022"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        MachineRentalListing listing1 = new MachineRentalListing();
+        listing1.name = "Good tractor for rental";
+        listing1.price = 20000;
+        listing1.photoReferences.add(R.drawable.green_tractor);
+        listing1.availability = dateSpan1;
+        user1.listings.add(listing1);
 
         list.add(user1);
 
@@ -62,5 +82,16 @@ public class Users {
 
     public static Users getInstance() {
         return instance;
+    }
+
+    public ArrayList<Pair<User, Listing>> getAllListings() {
+        ArrayList<Pair<User, Listing>> allListingsData = new ArrayList<>();
+        for (User user : list) {
+            for (Listing listing : user.listings) {
+                allListingsData.add(new Pair<>(user, listing));
+            }
+        }
+
+        return allListingsData;
     }
 }

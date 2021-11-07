@@ -102,7 +102,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="6dp"
-            android:background="@drawable/ic_circle"
+            android:background="@drawable/ic_circle_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -204,7 +204,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="6dp"
-            android:background="@drawable/ic_circle"
+            android:background="@drawable/ic_circle_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -304,7 +304,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="6dp"
-            android:background="@drawable/ic_circle"
+            android:background="@drawable/ic_circle_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -406,7 +406,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="6dp"
-            android:background="@drawable/ic_circle"
+            android:background="@drawable/ic_circle_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
