@@ -17,6 +17,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+    <LinearLayout
+        android:id="@+id/innerFilterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <EditText
             android:id="@+id/filterSearch"
             android:layout_width="match_parent"
@@ -98,6 +104,23 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <ImageButton
+            android:id="@+id/maximizeMinimizeFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/maximizeMinimizeFiltersButton"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_arrow_up" />
 
         <View
             android:layout_width="match_parent"

@@ -4,7 +4,7 @@ import static com.example.enablersofsymbiosisprototype.data.Utils.enumToStringLi
 
 import java.util.ArrayList;
 
-public class SeedListing {
+public class SeedListing extends Listing {
     public enum Application {
         NormalAndOrganicFarming,
     }

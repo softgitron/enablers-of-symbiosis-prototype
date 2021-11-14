@@ -5,6 +5,7 @@ import static com.example.enablersofsymbiosisprototype.data.Utils.camelToHumanCa
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Listing {
     public enum ListingType {
@@ -30,7 +31,8 @@ public class Listing {
     public ArrayList<Integer> photoReferences = new ArrayList<>();
     public String name;
     public String description;
-    public long price;
+    public Long price;
+    public Date date;
     public Location location;
 
     @NonNull

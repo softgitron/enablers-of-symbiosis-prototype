@@ -43,7 +43,7 @@
             android:background="?android:attr/listDivider" />
 
         <include
-            android:id="@+id/ListingType"
+            android:id="@+id/listingTypes"
             layout="@layout/fragment_filter_listing_type" />
 
         <View
@@ -68,7 +68,7 @@
                 android:drawableStart="@drawable/ic_arrow_down"
                 android:hint="@string/filterMinPriceHint"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:textColorHint="#616161" />
 
@@ -83,7 +83,7 @@
                 android:drawableStart="@drawable/ic_arrow_up"
                 android:hint="@string/filterMaxPriceHint"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 android:textColorHint="#616161" />
         </LinearLayout>
@@ -152,6 +152,18 @@
             android:id="@+id/filterButtonLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/clearFiltersButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/filterClearFilters"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/applyFiltersButton"

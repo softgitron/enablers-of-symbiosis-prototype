@@ -1,17 +1,20 @@
 package com.example.enablersofsymbiosisprototype;
 
+import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.enablersofsymbiosisprototype.ui.marketplace.SearchController;
 import com.google.android.gms.common.internal.Asserts;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
+import androidx.navigation.NavBackStackEntry;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -24,6 +27,7 @@ import com.example.enablersofsymbiosisprototype.databinding.ActivityMainBinding;
 
 import org.osmdroid.config.Configuration;
 
+import java.util.Deque;
 import java.util.Observable;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             destinationID = destination.getId();
             invalidateOptionsMenu();
+
+            // Hack! if marketplace view is not in the backstack anymore, clear search filters.
+            try {
+                controller.getBackStackEntry(R.id.nav_marketplace);
+            } catch (Exception e) {
+                SearchController.resetInstance();
+            }
         });
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);

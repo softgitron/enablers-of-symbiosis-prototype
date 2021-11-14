@@ -34,6 +34,7 @@
     <string name="filterMaxPriceHint">Max price</string>
     <string name="filterMaxDistanceHint">Max distance</string>
     <string name="filterMapContentDescription">Current location with a circle presenting max distance</string>
+    <string name="filterClearFilters">Clear filters</string>
     <string name="filterApplyFilters">Apply filters</string>
     <string name="filterCategoriesTitle">Categories:</string>
     <string name="filterOrderTitle">Order:</string>
@@ -61,6 +62,7 @@
 
     <string name="filterButtonMoreSearchOptions">More search options</string>
     <string name="filterButtonSearch">Search</string>
+    <string name="maximizeMinimizeFiltersButton">Maximize or minimize filters menu</string>
 
     <string name="exampleText">This is example text that will be replaced in runtime</string>
 </resources>
