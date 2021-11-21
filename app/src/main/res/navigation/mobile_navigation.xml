@@ -42,6 +42,11 @@
             app:destination="@id/nav_marketplace_additional_filters"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_nav_marketplace_to_nav_list_item_details"
+            app:destination="@id/nav_list_item_details"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -73,6 +78,30 @@
         android:name="com.example.enablersofsymbiosisprototype.ui.marketplace.MarketplaceAdditionalFiltersFragment"
         android:label="@string/menu_marketplace_additional_filters"
         tools:layout="@layout/fragment_marketplace_additional_filters" />
+
+    <fragment
+        android:id="@+id/nav_list_item_details"
+        android:name="com.example.enablersofsymbiosisprototype.ui.listingDetails.ListingDetailsFragment"
+        android:label="@string/menu_list_item_details"
+        tools:layout="@layout/fragment_general_list_item_details" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <argument android:name="listingId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/machine_listing_details"
+        android:name="com.example.enablersofsymbiosisprototype.ui.machineListingDetails.MachineListingDetailsFragment"
+        android:label="@string/menu_list_item_details"
+        tools:layout="@layout/fragment_general_list_item_details" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <argument android:name="listingId"
+            app:argType="integer" />
+    </fragment>
 
     <action
         android:id="@+id/action_global_nav_user_menu"

@@ -27,7 +27,15 @@ public class Listing {
         }
     };
 
+    public enum Department {
+        Tractors,
+        Seeds,
+        Fertilizers
+    }
+
+    public int id;
     public ListingType type;
+    public Department department;
     public ArrayList<Integer> photoReferences = new ArrayList<>();
     public String name;
     public String description;
@@ -35,9 +43,16 @@ public class Listing {
     public Date date;
     public Location location;
 
+    private static int listingAmount;
+
     @NonNull
     @Override
     public String toString() {
         return camelToHumanCase(this.getClass().getName());
+    }
+
+    public Listing() {
+        id = listingAmount;
+        listingAmount++;
     }
 }

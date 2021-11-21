@@ -9,11 +9,6 @@ public class FertilizerListing extends Listing {
         OrganicProducts,
     }
 
-    public enum Department {
-        Fertilizers,
-        OrganicFertilizers
-    }
-
     public enum PresentationForms {
         Solid,
         Liquid,
@@ -22,10 +17,11 @@ public class FertilizerListing extends Listing {
 
     public String weight;
     public Application application;
-    public Department department;
 
     public PresentationForms presentationForms;
     public String productInformation;
+
+    public String origin;
 
     public float phosphorus;
     public float potassium;
@@ -34,10 +30,6 @@ public class FertilizerListing extends Listing {
 
     public ArrayList<String> getApplications() {
         return enumToStringList(Application.values());
-    }
-
-    public ArrayList<String> getDepartments() {
-        return enumToStringList(Department.values());
     }
 
     public ArrayList<String> getPresentationForms() {

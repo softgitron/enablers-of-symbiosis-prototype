@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,7 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.enablersofsymbiosisprototype.R;
+import com.example.enablersofsymbiosisprototype.data.Listing;
+import com.example.enablersofsymbiosisprototype.data.User;
 import com.example.enablersofsymbiosisprototype.databinding.FragmentMarketplaceBinding;
+import com.example.enablersofsymbiosisprototype.ui.listingDetails.ListingDetailsFragmentArgs;
 import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListAdapter;
 import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListModel;
 
@@ -70,7 +74,7 @@ public class MarketplaceFragment extends Fragment {
 
         // specify an adapter
         marketplaceListItems = searchController.getFilteredAndOrderedList();
-        mAdapter = new StandardListAdapter(marketplaceListItems, null);
+        mAdapter = new StandardListAdapter(marketplaceListItems, new ListingClickListener());
         userList.setAdapter(mAdapter);
 
         // Handle additional filters click.
@@ -142,5 +146,23 @@ public class MarketplaceFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public class ListingClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            int itemPosition = binding.marketplaceItemsView.getChildLayoutPosition(view);
+            StandardListModel listItem = marketplaceListItems[itemPosition];
+
+            Listing listing = (Listing) listItem.extras.get("listing");
+            User user = (User) listItem.extras.get("user");
+
+            Bundle bundle = new Bundle();
+            bundle.putInt("userId", user.id);
+            bundle.putInt("listingId", listing.id);
+
+            NavController navController = NavHostFragment.findNavController(MarketplaceFragment.this);
+            navController.navigate(R.id.action_nav_marketplace_to_nav_list_item_details, bundle);
+        }
     }
 }
