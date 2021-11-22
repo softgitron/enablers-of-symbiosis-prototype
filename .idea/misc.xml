@@ -3,6 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_app_bar_help.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_app_bar_user.xml" value="0.13518518518518519" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_arrow_up.xml" value="0.34322916666666664" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_baseline_agriculture_24.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_circle_blue.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_circle_red.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_fab_add.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_location.xml" value="0.34322916666666664" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_menu_marketplace.xml" value="0.34322916666666664" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_search.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/farm_context_popup.xml" value="0.25" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_deals.xml" value="0.48333333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_deals_proposal_message.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_deals_proposal_send_message_bar.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_input_outputs_edit.xml" value="0.32708333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_inputs_outputs.xml" value="0.32708333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_map.xml" value="0.25" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_filter_categories.xml" value="0.32708333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_filter_order.xml" value="0.32708333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_home.xml" value="0.32708333333333334" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_marketplace.xml" value="0.1661600810536981" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_marketplace_additional_filters.xml" value="0.4498327759197324" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_my_farm.xml" value="0.33" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_proposal_accept_decline.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_proposal_page.xml" value="0.5" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_standard_list_item.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_their_farm.xml" value="0.25" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_user_menu.xml" value="0.18659420289855072" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/nav_header_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/menu/activity_main_drawer.xml" value="0.5541666666666667" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/menu/main.xml" value="0.5541666666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.8630208333333333" />
         <entry key="app/src/main/res/drawable/home_round_corner.xml" value="0.8651041666666667" />
         <entry key="app/src/main/res/drawable/ic_app_bar_help.xml" value="0.5302083333333333" />
