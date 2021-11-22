@@ -12,46 +12,45 @@
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical">
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="214dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/farmer" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="John Johnson" />
+                <ImageView
+                    android:layout_width="214dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/farmer" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="John Johnson" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-90dp"
-                android:layout_marginTop="65dp"
-                android:text="Johnson@john.com" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-90dp"
+                    android:layout_marginTop="65dp"
+                    android:text="Johnson@john.com" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-125dp"
-                android:layout_marginTop="100dp"
-                android:text="+358121231234" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-125dp"
+                    android:layout_marginTop="100dp"
+                    android:text="+358121231234" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-105dp"
-                android:layout_marginTop="135dp"
-                android:text="Testikatu 123"
-                android:drawableEnd="@drawable/ic_fab_add"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-105dp"
+                    android:layout_marginTop="135dp"
+                    android:text="Testikatu 123" />
 
-        </TableRow>
+            </TableRow>
 
 
         <TextView
@@ -69,7 +68,7 @@
 
         <include
             android:id="@+id/basicFilterCategories"
-            layout="@layout/fragment_farm_input_outputs_edit"
+            layout="@layout/fragment_farm_inputs_outputs"
             android:layout_height="110dp"
             android:layout_width="match_parent" />
 
@@ -88,7 +87,7 @@
 
         <include
             android:id="@+id/basicFilterCategories1"
-            layout="@layout/fragment_farm_input_outputs_edit"
+            layout="@layout/fragment_farm_inputs_outputs"
             android:layout_height="110dp"
             android:layout_width="match_parent" />
 
@@ -105,8 +104,7 @@
             android:text="Humble farmer from Finland"
             android:gravity="center"
             android:layout_marginTop="5dp"
-            android:textStyle="italic"
-            android:drawableEnd="@drawable/ic_fab_add"/>
+            android:textStyle="italic"/>
 
 
 
