@@ -1,16 +1,13 @@
 package com.example.enablersofsymbiosisprototype.data;
 
+import static com.example.enablersofsymbiosisprototype.data.Utils.camelToHumanCase;
 import static com.example.enablersofsymbiosisprototype.data.Utils.enumToStringList;
 
 import java.util.ArrayList;
 
-public class SeedListing {
+public class SeedListing extends Listing {
     public enum Application {
         NormalAndOrganicFarming,
-    }
-
-    public enum Department {
-        OatSeeds,
     }
 
     public enum DiseaseResistance {
@@ -22,7 +19,6 @@ public class SeedListing {
 
     public String weight;
     public Application application;
-    public Department department;
 
     // Product information.
     public String origin;
@@ -37,11 +33,7 @@ public class SeedListing {
         return enumToStringList(Application.values());
     }
 
-    public ArrayList<String> getDepartments() {
-        return enumToStringList(Department.values());
-    }
-
-    public ArrayList<String> getDiseaseResistances() {
-        return enumToStringList(DiseaseResistance.values());
+    public String getDiseaseResistance() {
+        return camelToHumanCase(diseaseResistance.name());
     }
 }

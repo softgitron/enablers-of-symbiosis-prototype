@@ -1,13 +1,15 @@
 package com.example.enablersofsymbiosisprototype.ui.marketplace;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -15,41 +17,37 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.enablersofsymbiosisprototype.R;
-import com.example.enablersofsymbiosisprototype.ui.recyclers.*;
+import com.example.enablersofsymbiosisprototype.data.Listing;
+import com.example.enablersofsymbiosisprototype.data.User;
 import com.example.enablersofsymbiosisprototype.databinding.FragmentMarketplaceBinding;
+import com.example.enablersofsymbiosisprototype.ui.listingDetails.ListingDetailsFragmentArgs;
+import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListAdapter;
 import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListModel;
-import com.example.enablersofsymbiosisprototype.ui.userMenu.UserMenuFragment;
 
 public class MarketplaceFragment extends Fragment {
 
 
-    private MarketplaceViewModel marketplaceViewModel;
+    StandardListAdapter mAdapter;
     private FragmentMarketplaceBinding binding;
-
     private SearchController searchController;
     private StandardListModel[] marketplaceListItems;
-    StandardListAdapter mAdapter;
+    private Boolean filterMenuVisible = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        marketplaceViewModel =
-                new ViewModelProvider(this).get(MarketplaceViewModel.class);
 
         binding = FragmentMarketplaceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        marketplaceViewModel.radioOrderNewest.observe(getViewLifecycleOwner(), binding.basicFilterOrder.radioOrderNewest::setChecked);
-        marketplaceViewModel.radioOrderOldest.observe(getViewLifecycleOwner(), binding.basicFilterOrder.radioOrderOldest::setChecked);
-        marketplaceViewModel.radioOrderPriceHighest.observe(getViewLifecycleOwner(), binding.basicFilterOrder.radioOrderPriceHighest::setChecked);
-        marketplaceViewModel.radioOrderPriceLowest.observe(getViewLifecycleOwner(), binding.basicFilterOrder.radioOrderPriceLowest::setChecked);
+        searchController = SearchController.getInstance().updateBinding(binding);
 
-        searchController = SearchController.getInstance(marketplaceViewModel);
-
+        // Click handlers for radio buttons.
         binding.basicFilterOrder.radioOrderNewest.setOnClickListener(searchController.radioButtonHandler);
         binding.basicFilterOrder.radioOrderOldest.setOnClickListener(searchController.radioButtonHandler);
         binding.basicFilterOrder.radioOrderPriceHighest.setOnClickListener(searchController.radioButtonHandler);
         binding.basicFilterOrder.radioOrderPriceLowest.setOnClickListener(searchController.radioButtonHandler);
 
+        // Click handlers for chips.
         binding.basicFilterCategories.filterFarmByproducts.setOnClickListener(searchController.chipHandler);
         binding.basicFilterCategories.filterFarmDisposables.setOnClickListener(searchController.chipHandler);
         binding.basicFilterCategories.filterFarmProducts.setOnClickListener(searchController.chipHandler);
@@ -58,6 +56,9 @@ public class MarketplaceFragment extends Fragment {
         binding.basicFilterCategories.filterMachineRental.setOnClickListener(searchController.chipHandler);
         binding.basicFilterCategories.filterSeeds.setOnClickListener(searchController.chipHandler);
         binding.basicFilterCategories.filterWorkforceRental.setOnClickListener(searchController.chipHandler);
+
+        // Text handlers for text field.
+        binding.filterSearch.addTextChangedListener(searchController.searchListener);
 
         // Initial population for the recycler view.
         RecyclerView userList = binding.marketplaceItemsView;
@@ -73,7 +74,7 @@ public class MarketplaceFragment extends Fragment {
 
         // specify an adapter
         marketplaceListItems = searchController.getFilteredAndOrderedList();
-        mAdapter = new StandardListAdapter(marketplaceListItems, null);
+        mAdapter = new StandardListAdapter(marketplaceListItems, new ListingClickListener());
         userList.setAdapter(mAdapter);
 
         // Handle additional filters click.
@@ -88,12 +89,80 @@ public class MarketplaceFragment extends Fragment {
             mAdapter.updateAdapterList(marketplaceListItems);
         });
 
+        // Handle hiding / showing of the filters.
+        binding.maximizeMinimizeFilters.setOnClickListener(view -> {
+            filterMenuVisible = !filterMenuVisible;
+            if (filterMenuVisible) {
+                binding.maximizeMinimizeFilters.setImageResource(R.drawable.ic_arrow_up);
+                binding.filterLayout.setTranslationY(
+                        -binding.innerFilterLayout.getHeight() + binding.maximizeMinimizeFilters.getHeight());
+                binding.innerFilterLayout.setVisibility(View.VISIBLE);
+                binding.filterLayout.animate()
+                        .translationY(0)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                binding.innerFilterLayout.setVisibility(View.VISIBLE);
+                            }
+                        });
+            } else {
+                binding.maximizeMinimizeFilters.setImageResource(R.drawable.ic_arrow_down);
+                binding.filterLayout.animate()
+                        .translationY(-binding.innerFilterLayout.getHeight() + binding.maximizeMinimizeFilters.getHeight())
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                binding.filterLayout.setTranslationY(0);
+                                binding.innerFilterLayout.setVisibility(View.GONE);
+                            }
+                        });
+            }
+        });
+
         return root;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        searchController = SearchController.getInstance().updateBinding(binding);
+
+        // Update chip statuses.
+        searchController.updateChipStatuses();
+
+        // Update order statuses.
+        searchController.updateCurrentOrder();
+
+        // Update search phrase.
+        searchController.updateSearchText();
+
+        // Update status field.
+        searchController.updateStatusFields();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public class ListingClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            int itemPosition = binding.marketplaceItemsView.getChildLayoutPosition(view);
+            StandardListModel listItem = marketplaceListItems[itemPosition];
+
+            Listing listing = (Listing) listItem.extras.get("listing");
+            User user = (User) listItem.extras.get("user");
+
+            Bundle bundle = new Bundle();
+            bundle.putInt("userId", user.id);
+            bundle.putInt("listingId", listing.id);
+
+            NavController navController = NavHostFragment.findNavController(MarketplaceFragment.this);
+            navController.navigate(R.id.action_nav_marketplace_to_nav_list_item_details, bundle);
+        }
     }
 }

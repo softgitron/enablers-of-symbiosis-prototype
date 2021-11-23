@@ -7,6 +7,7 @@ import com.example.enablersofsymbiosisprototype.R;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 
 public class Users {
@@ -24,20 +25,40 @@ public class Users {
         user1.email = "lasse.jokinen@example.com";
         user1.phoneNumber = 358552145864L;
 
-        DateSpan dateSpan1 = new DateSpan();
-        try {
-            dateSpan1.initDatesBetween(
-                    new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse("1.1.2022"),
-                    new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse("1.2.2022"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        DateSpan dateSpan1 = createDateSpan("1.1.2022", "1.2.2022");
         MachineRentalListing listing1 = new MachineRentalListing();
         listing1.name = "Good tractor for rental";
-        listing1.price = 20000;
+        listing1.price = 20000L;
+        listing1.type = Listing.ListingType.Rent;
+        listing1.department = Listing.Department.Tractors;
+        listing1.date = createDate("10.12.2021");
         listing1.photoReferences.add(R.drawable.green_tractor);
+        listing1.photoReferences.add(R.drawable.red_tractor);
         listing1.availability = dateSpan1;
+        listing1.description = "Good tractor for rental with fairly cheap price.";
+        listing1.engine = "10.0";
+        listing1.gears = MachineRentalListing.Gears.Manual;
+        listing1.drive = "Four-wheel drive";
+        listing1.power = 40;
+        listing1.weight = 3000;
         user1.listings.add(listing1);
+
+        DateSpan dateSpan2 = createDateSpan("2.4.2022", "3.4.2022");
+        MachineRentalListing listing2 = new MachineRentalListing();
+        listing2.name = "Cheap tractor for a weekend";
+        listing2.price = 5000L;
+        listing2.type = Listing.ListingType.Rent;
+        listing2.department = Listing.Department.Tractors;
+        listing2.date = createDate("11.12.2021");
+        listing2.photoReferences.add(R.drawable.red_tractor);
+        listing2.availability = dateSpan2;
+        listing2.description = "Ultra cheap tractor ready for couple days rental.";
+        listing2.engine = "2.1";
+        listing2.gears = MachineRentalListing.Gears.Manual;
+        listing2.drive = "Two-wheel drive";
+        listing2.power = 5;
+        listing2.weight = 1000;
+        user1.listings.add(listing2);
 
         list.add(user1);
 
@@ -75,9 +96,57 @@ public class Users {
         notifications2.marketplaceDescription = "- Super seeds available";
         user3.notifications = notifications2;
 
+        SeedListing listing3 = new SeedListing();
+        listing3.name = "Oat seeds";
+        listing3.price = 16L;
+        listing3.type = Listing.ListingType.Sell;
+        listing3.department = Listing.Department.Seeds;
+        listing3.date = createDate("13.12.2021");
+        listing3.cultivationInstructions = "Recommended for Southern Finland";
+        listing3.photoReferences.add(R.drawable.oat_seeds);
+        listing3.description = "Good oat seeds";
+        listing3.origin = "Boreal Plant Breeding Oy";
+        listing3.growingTime = "Late oats";
+        listing3.industry = "Mill industry";
+        listing3.diseaseResistance = SeedListing.DiseaseResistance.Good;
+        listing3.cultivationInstructions = "All types of soils, but preferably clay and mineral soils.";
+        user3.listings.add(listing3);
+
+        FertilizerListing listing4 = new FertilizerListing();
+        listing4.name = "Fertilizer for Barley";
+        listing4.price = 32L;
+        listing4.type = Listing.ListingType.Sell;
+        listing4.department = Listing.Department.Fertilizers;
+        listing4.date = createDate("15.12.2021");
+        listing4.presentationForms = FertilizerListing.PresentationForms.Solid;
+        listing4.photoReferences.add(R.drawable.chemical_fertilizer);
+        listing4.description = "Good everyday fertilizer";
+        listing4.origin = "PKP wood and peat ash";
+        listing4.phosphorus = 1.7f;
+        listing4.potassium = 24f;
+        listing4.calcium = 11f;
+        listing4.magnesium = 5.8f;
+        user3.listings.add(listing4);
+
         list.add(user3);
 
         currentUser = user1;
+    }
+
+    private static DateSpan createDateSpan(String startDate, String endData) {
+        DateSpan dateSpan = new DateSpan();
+        dateSpan.initDatesBetween(createDate(startDate), createDate(endData));
+        return dateSpan;
+    }
+
+    private static Date createDate(String dateString) {
+        Date date = null;
+        try {
+            date = new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse(dateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 
     public static Users getInstance() {

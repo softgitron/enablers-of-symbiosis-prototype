@@ -20,7 +20,6 @@ public class MachineRentalListing extends RentalListing {
     public int operatingHours;
     public int modelYear;
     public String engine;
-    public Department department;
 
     public Gears gears;
     public String drive;

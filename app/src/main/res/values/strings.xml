@@ -16,6 +16,7 @@
     <string name="menu_my_farm">My farm</string>
     <string name="menu_user_menu">User menu</string>
     <string name="menu_marketplace_additional_filters">Additional filters</string>
+    <string name="menu_list_item_details">Details</string>
 
     <string name="floatingbutton">floatingButton</string>
     <string name="marketplaceButton">Tractor</string>
@@ -36,6 +37,7 @@
     <string name="filterMaxPriceHint">Max price</string>
     <string name="filterMaxDistanceHint">Max distance</string>
     <string name="filterMapContentDescription">Current location with a circle presenting max distance</string>
+    <string name="filterClearFilters">Clear filters</string>
     <string name="filterApplyFilters">Apply filters</string>
     <string name="filterCategoriesTitle">Categories:</string>
     <string name="filterOrderTitle">Order:</string>
@@ -63,6 +65,16 @@
 
     <string name="filterButtonMoreSearchOptions">More search options</string>
     <string name="filterButtonSearch">Search</string>
+    <string name="maximizeMinimizeFiltersButton">Maximize or minimize filters menu</string>
+
+    <string name="listingGalleryImageDescription">Photos from the product</string>
+    <string name="listingGalleryBackward">Go to previous photo</string>
+    <string name="listingGalleryForward">Go to next photo</string>
+    <string name="listingContent">Contents of the listing</string>
+
+    <string name="equipmentInformationTitle">Equipment information:</string>
+    <string name="technicalInformationTitle">Technical information:</string>
+    <string name="productInformationTitle">Product information:</string>
 
     <string name="exampleText">This is example text that will be replaced in runtime</string>
 </resources>

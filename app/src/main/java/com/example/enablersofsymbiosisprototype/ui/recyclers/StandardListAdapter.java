@@ -28,9 +28,9 @@ public class StandardListAdapter extends RecyclerView.Adapter<StandardListAdapte
 
             view.setOnClickListener(clickListener);
 
-            titleView = (TextView) view.findViewById(R.id.marketplaceNotificationTitle);
-            descriptionView = (TextView) view.findViewById(R.id.marketplaceNotificationDescription);
-            thumbnailView = (ImageView) view.findViewById(R.id.listItemThumbnail);
+            titleView = view.findViewById(R.id.marketplaceNotificationTitle);
+            descriptionView = view.findViewById(R.id.marketplaceNotificationDescription);
+            thumbnailView = view.findViewById(R.id.listItemThumbnail);
         }
 
         public TextView getTitleView() {
@@ -80,6 +80,7 @@ public class StandardListAdapter extends RecyclerView.Adapter<StandardListAdapte
 
     public void updateAdapterList(StandardListModel[] dataSet) {
         DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new StandardDiffCallback(dataSet, localDataSet));
+        localDataSet = dataSet;
         diffResult.dispatchUpdatesTo(this);
     }
 }

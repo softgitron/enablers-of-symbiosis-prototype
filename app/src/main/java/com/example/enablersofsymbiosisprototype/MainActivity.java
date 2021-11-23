@@ -1,18 +1,21 @@
 package com.example.enablersofsymbiosisprototype;
 
+import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.android.gms.common.internal.Asserts;
+import com.example.enablersofsymbiosisprototype.ui.marketplace.SearchController;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,8 +26,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.enablersofsymbiosisprototype.databinding.ActivityMainBinding;
 
 import org.osmdroid.config.Configuration;
-
-import java.util.Observable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             destinationID = destination.getId();
             invalidateOptionsMenu();
+
+            // Hack! if marketplace view is not in the backstack anymore, clear search filters.
+            try {
+                controller.getBackStackEntry(R.id.nav_marketplace);
+            } catch (Exception e) {
+                SearchController.resetInstance();
+            }
+
+            // Update fab button.
+            updateFabState(destination);
         });
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
@@ -74,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
         Configuration.getInstance().setOsmdroidBasePath(getCacheDir());
         Configuration.getInstance().setUserAgentValue("enablersofsymbiosisprototype");
         latestGrantResults.postValue(0);
+    }
+
+    private void updateFabState(NavDestination destination) {
+        ExtendedFloatingActionButton fab = binding.appBarMain.fab;
+        if (destination.getId() == R.id.nav_marketplace) {
+            fab.setText("New listing");
+            fab.show();
+        } else if (destination.getId() == R.id.nav_list_item_details) {
+            fab.setText("Contact seller");
+            fab.show();
+        } else {
+            fab.hide();
+        }
     }
 
     @Override

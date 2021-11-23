@@ -4,14 +4,9 @@ import static com.example.enablersofsymbiosisprototype.data.Utils.enumToStringLi
 
 import java.util.ArrayList;
 
-public class FertilizerListing {
+public class FertilizerListing extends Listing {
     public enum Application {
         OrganicProducts,
-    }
-
-    public enum Department {
-        Fertilizers,
-        OrganicFertilizers
     }
 
     public enum PresentationForms {
@@ -22,10 +17,11 @@ public class FertilizerListing {
 
     public String weight;
     public Application application;
-    public Department department;
 
     public PresentationForms presentationForms;
     public String productInformation;
+
+    public String origin;
 
     public float phosphorus;
     public float potassium;
@@ -34,10 +30,6 @@ public class FertilizerListing {
 
     public ArrayList<String> getApplications() {
         return enumToStringList(Application.values());
-    }
-
-    public ArrayList<String> getDepartments() {
-        return enumToStringList(Department.values());
     }
 
     public ArrayList<String> getPresentationForms() {
