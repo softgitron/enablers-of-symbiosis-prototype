@@ -27,6 +27,8 @@
     <string name="dealsButtonTitle"><![CDATA[Deals >]]></string>
     <string name="myFarmButton">Farm</string>
     <string name="myFarmButtonTitle"><![CDATA[My farm >]]></string>
+    <string name="theirFarm">John Johnson</string>
+    <string name="proposals">John Johnson</string>
 
     <string name="listImageDescription">Image of the list item</string>
 

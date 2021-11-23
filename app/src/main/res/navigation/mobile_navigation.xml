@@ -50,16 +50,44 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_theirfarm"
+        android:name="com.example.enablersofsymbiosisprototype.ui.theirFarm.TheirFarmFragment"
+        android:label="@string/theirFarm"
+        tools:layout="@layout/fragment_their_farm" >
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_farm_map"
         android:name="com.example.enablersofsymbiosisprototype.ui.farmMap.FarmMapFragment"
         android:label="@string/menu_farm_map"
-        tools:layout="@layout/fragment_farm_map" />
+        tools:layout="@layout/fragment_farm_map">
+        <action
+            android:id="@+id/action_nav_farmmap_your_farm"
+            app:destination="@id/nav_theirfarm"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_deals"
         android:name="com.example.enablersofsymbiosisprototype.ui.deals.DealsFragment"
         android:label="@string/menu_deals"
-        tools:layout="@layout/fragment_deals" />
+        tools:layout="@layout/fragment_deals" >
+
+        <action
+            android:id="@+id/action_nav_deals_proposal"
+            app:destination="@+id/nav_proposals"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_proposals"
+        android:name="com.example.enablersofsymbiosisprototype.ui.proposals.ProposalsFragment"
+        android:label="@string/proposals"
+        tools:layout="@layout/fragment_proposal_page">
+
+    </fragment>
 
     <fragment
         android:id="@+id/nav_my_farm"

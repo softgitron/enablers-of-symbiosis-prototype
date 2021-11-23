@@ -22,4 +22,5 @@
     <color name="secondary_700">#455A64</color>
     <color name="secondary_800">#37474F</color>
     <color name="secondary_900">#263238</color>
+    <color name="Error_100">#B00020</color>
 </resources>

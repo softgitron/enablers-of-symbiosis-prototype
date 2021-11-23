@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_900">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/arrow"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_gravity="center"
+        android:padding="8dp">
+
+        <ImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/up_arrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:src="@drawable/ic_arrow_up"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/farmname"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="Farmer John"
+            android:layout_margin="8dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/farmcontact"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="+3581231231233"
+            android:layout_margin="8dp"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="Address 123"
+            android:layout_margin="8dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+</LinearLayout>
