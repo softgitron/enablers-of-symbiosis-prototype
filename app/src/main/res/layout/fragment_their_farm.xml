@@ -68,7 +68,7 @@
 
         <include
             android:id="@+id/basicFilterCategories"
-            layout="@layout/fragment_farm_inputs_outputs"
+            layout="@layout/fragment_farm_inputs"
             android:layout_height="110dp"
             android:layout_width="match_parent" />
 
@@ -87,7 +87,7 @@
 
         <include
             android:id="@+id/basicFilterCategories1"
-            layout="@layout/fragment_farm_inputs_outputs"
+            layout="@layout/fragment_farm_outputs"
             android:layout_height="110dp"
             android:layout_width="match_parent" />
 

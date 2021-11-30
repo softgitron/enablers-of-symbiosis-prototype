@@ -20,7 +20,7 @@ import com.example.enablersofsymbiosisprototype.R;
 import com.example.enablersofsymbiosisprototype.data.Listing;
 import com.example.enablersofsymbiosisprototype.data.User;
 import com.example.enablersofsymbiosisprototype.databinding.FragmentMarketplaceBinding;
-import com.example.enablersofsymbiosisprototype.ui.listingDetails.ListingDetailsFragmentArgs;
+import com.example.enablersofsymbiosisprototype.ui.listingDetails.ListingDetailsFragment;
 import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListAdapter;
 import com.example.enablersofsymbiosisprototype.ui.recyclers.StandardListModel;
 
