@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5703125" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/circle.xml" value="0.34322916666666664" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_app_bar_help.xml" value="0.5703125" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_app_bar_user.xml" value="0.13518518518518519" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/drawable/ic_arrow_up.xml" value="0.34322916666666664" />
@@ -22,6 +23,7 @@
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_input_outputs_edit.xml" value="0.32708333333333334" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_inputs_outputs.xml" value="0.32708333333333334" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_map.xml" value="0.25" />
+        <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_farm_outputs.xml" value="0.3265625" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_filter_categories.xml" value="0.32708333333333334" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_filter_order.xml" value="0.32708333333333334" />
         <entry key="..\:/symbiosis/enablers-of-symbiosis-prototype/app/src/main/res/layout/fragment_home.xml" value="0.32708333333333334" />
@@ -53,18 +55,13 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.738677536231884" />
         <entry key="app/src/main/res/layout/fragment_deals.xml" value="0.7427536231884058" />
         <entry key="app/src/main/res/layout/fragment_farm_map.xml" value="0.7427536231884058" />
-        <entry key="app/src/main/res/layout/fragment_fertilizer_list_item_details.xml" value="1.1" />
         <entry key="app/src/main/res/layout/fragment_filter_categories.xml" value="0.6010416666666667" />
         <entry key="app/src/main/res/layout/fragment_filter_listing_type.xml" value="0.6598958333333333" />
         <entry key="app/src/main/res/layout/fragment_filter_order.xml" value="1.25" />
-        <entry key="app/src/main/res/layout/fragment_general_list_item_details.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.75" />
-        <entry key="app/src/main/res/layout/fragment_listing_page_motion_description.xml" value="0.596875" />
-        <entry key="app/src/main/res/layout/fragment_machine_rental_list_item_details.xml" value="0.9483620210993893" />
         <entry key="app/src/main/res/layout/fragment_marketplace.xml" value="0.75" />
         <entry key="app/src/main/res/layout/fragment_marketplace_additional_filters.xml" value="0.6598958333333333" />
         <entry key="app/src/main/res/layout/fragment_my_farm.xml" value="0.7427536231884058" />
-        <entry key="app/src/main/res/layout/fragment_seed_list_item_details.xml" value="1.1" />
         <entry key="app/src/main/res/layout/fragment_standard_list_item.xml" value="0.9" />
         <entry key="app/src/main/res/layout/fragment_user_menu.xml" value="0.7427536231884058" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.7427536231884058" />
@@ -72,7 +69,6 @@
         <entry key="app/src/main/res/menu/main.xml" value="0.8338541666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/farm_and_tractor.xml" value="0.8651041666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/field_and_tractor.xml" value="0.8651041666666667" />
-        <entry key="app/src/main/res/xml/scene_listing.xml" value="0.596875" />
       </map>
     </option>
   </component>
